@@ -1,0 +1,116 @@
+.main {
+  /* width:100%;
+    margin: auto; */
+  display: flex;
+  flex-direction: column;
+  border: "1px solid #44425A";
+  background-color: rgb(253, 253, 253);
+  border: 1px solid gray;
+  padding-bottom: 2rem;
+}
+
+.container {
+  display: "flex";
+  flex-direction: "row";
+  justify-content: "space-between";
+  align-items: "start";
+  padding-left: "10px";
+  padding-right: "10px";
+}
+
+.header_text {
+  font-size: "15px";
+  font-family: "sans-serif";
+  font-weight: "bolder";
+  color: "purple";
+}
+.p {
+  font-size: "15px";
+  font-family: "sans-serif";
+  font-weight: "bold";
+  color: "#44425A";
+}
+.backgroundStyle {
+  width: "20vw";
+  height: "30vh";
+  background-repeat: "no-repeat";
+  background-size: "cover";
+}
+
+.grid_display {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+}
+
+.button {
+  font-size: "50px";
+  font-family: "sans-serif";
+  font-weight: "bolder";
+  color: "#44425A";
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: white;
+}
+.viewmore {
+  color: "blue";
+  font-size: "20px";
+  font-family: "sans-serif";
+  font-weight: "bolder";
+  color: "#44425A";
+}
+.blueline {
+  width: "2.5rem";
+  height: "5px";
+  background-color: "blue";
+  border-radius: "1rem";
+}
+.viewmore_container {
+  display: "flex";
+  flex-direction: row;
+  justify-content: "space-between";
+  align-items: "center";
+  gap: "10px";
+  background-color: aquamarine;
+}
+@media screen and (min-width: 1px) {
+  .main {
+    /* width:100%; */
+  }
+  .grid_display {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 500px) {
+  .main {
+    /* width:80%; */
+  }
+  .grid_display {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 0.5rem;
+  }
+}
+@media screen and (min-width: 900px) {
+  .main {
+    /* width:70%; */
+  }
+  .grid_display {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main {
+    /* width:70%; */
+  }
+  .grid_display {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,15 @@
+:root {
+  ---primaryColor: "#44425A";
+  ---secondaryColor: "#ff6600";
+  ---padding: 1rem 2rem 1rem 2rem;
+  ---font: 1rem;
+}
+.main {
+  background-color: "#ff6600";
+  padding: var(---padding);
+  color: black;
+  font-size: var(---font);
+  font-family: monospace;
+  font-weight: 600;
+  box-shadow: 0px 0px 5px 1px rgb(0, 0, 0.2);
+}

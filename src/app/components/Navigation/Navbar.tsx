@@ -1,15 +1,64 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useStateProvider } from "@/app/context/StateContext";
+import Link from "next/link";
+import { constants } from "@/app/context/constants";
 export const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+
+  const [state, dispatch] = useStateProvider();
+
+  const data = {
+    id: 1,
+    text: "just testing how the things works for me to handle",
+    status: true,
+  };
+
+  useEffect(() => {
+    if (state) {
+      console.log("Value of the data I am testing:", { state });
+    }
+
+    const fetchData = () => {
+      fetch("http://localhost:4000/api/v1/material", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Request failed");
+          }
+        })
+        .then((data) => {
+          console.log("Fetched data:", data);
+          // Further processing of the fetched data
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    };
+
+    fetchData();
+  }, [state, dispatch]);
   return (
     <div className="w-[100vw] shadow sticky bg-white">
       <nav className="w-[100%] md:w-[90%] mx-auto flex flex-row justify-between items-center  py-[1rem]  relative">
-        <span className="text-2xl font-sans border-sky-950 pl-[1rem]">
-          <em className="text-3xl font-sans font-bold text-sky-700 ">M</em>
-          anoica
-        </span>
+        <Link
+          href={"/"}
+          onClick={() => {
+            dispatch({ type: constants.SET_USER_INFO, payload: data });
+          }}
+        >
+          <span className="text-2xl font-sans border-sky-950 pl-[1rem]">
+            <em className="text-3xl font-sans font-bold text-sky-700 ">M</em>
+            anoica
+          </span>
+        </Link>
         <div
           className="flex md:hidden pr-[10px] flex-col justify-between items-center w-8 h-5 gap-1"
           onClick={() => setShowMenu(!showMenu)}

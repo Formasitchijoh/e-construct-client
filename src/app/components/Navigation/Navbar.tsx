@@ -114,10 +114,6 @@ export const Navbar = () => {
             className="w-8 h-8 rounded-full"
           />
         </div>
-        {/* <div className=' hidden md:flex flex-row justify-center items-center gap-2'>
-       <button className='text-lg  border-2  border-sky-950 px-[2rem] py-[0.5rem] bg-white rounded-lg  font-bold'>SignUp</button>
-        <button className='text-lg  border-2 bg-sky-950 px-[2rem] py-[0.5rem] rounded-lg text-white font-bold'>Login</button>
-       </div> */}
       </nav>
     </div>
   );
